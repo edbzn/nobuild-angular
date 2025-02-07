@@ -1,1 +1,5 @@
 # nobuild-angular
+
+```
+pnpm start
+```

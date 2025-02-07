@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Nobuild Angular</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <script async src="https://ga.jspm.io/npm:es-module-shims@2.0.9/dist/es-module-shims.js"></script>
+  <script type="esms-options">
+    { "polyfillEnable": ["typescript"] }
+  </script>
+  <script type="importmap">
+    {
+      "imports": {
+        "@angular/core": "https://ga.jspm.io/npm:@angular/core@19.1.0/fesm2022/core.mjs",
+        "@angular/core/primitives/signals": "https://ga.jspm.io/npm:@angular/core@19.1.0/fesm2022/primitives/signals.mjs",
+        "@angular/core/primitives/event-dispatch": "https://ga.jspm.io/npm:@angular/core@19.1.0/fesm2022/primitives/event-dispatch.mjs",
+        "@angular/compiler": "https://ga.jspm.io/npm:@angular/compiler@19.1.0/fesm2022/compiler.mjs",
+        "@angular/platform-browser": "https://ga.jspm.io/npm:@angular/platform-browser@19.1.0/fesm2022/platform-browser.mjs",
+        "@angular/common": "https://ga.jspm.io/npm:@angular/common@19.1.0/fesm2022/common.mjs",
+        "@angular/common/http": "https://ga.jspm.io/npm:@angular/common@19.1.0/fesm2022/http.mjs",
+        "rxjs": "https://cdn.jsdelivr.net/npm/rxjs@7.8.1/+esm",
+        "rxjs/operators": "https://cdn.jsdelivr.net/npm/rxjs@7.8.1/operators/+esm"
+      }
+    }
+  </script>
+</head>
+<body>
+  <script type="module" lang="ts">
+    import "@angular/compiler";
+    import { bootstrapApplication } from "@angular/platform-browser";
+    import { provideExperimentalZonelessChangeDetection } from "@angular/core";
+    import { AppComponent } from "./app.component.ts";
+
+    bootstrapApplication(AppComponent, {
+      providers: [provideExperimentalZonelessChangeDetection()],
+    }).catch((err) => console.error(err));
+  </script>
+  <app-root></app-root>
+</body>
+
+</html>
+
+
